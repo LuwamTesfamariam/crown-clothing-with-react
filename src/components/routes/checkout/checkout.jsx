@@ -7,21 +7,41 @@ const Checkout = () => {
     const { cartItems, addItemToCart } = useContext(CartContext);
 
     return (
-        <div>
-            <h1>I am checkout page</h1>
-            <div>{cartItems.map((cartItem) => {
+        <div className='checkout-container'>
+            <div className='checkout-header'>
+                <div className='header-block'>
+                    <span>Product</span>
+                </div>
+                <div className='header-block'>
+                    <span>Description</span>
+                </div>
+                <div className='header-block'>
+                    <span>Quantity</span>
+                </div>
+                <div className='header-block'>
+                    <span>Product</span>
+                </div>
+                <div className='header-block'>
+                    <span>Price</span>
+                </div>
+                <div className='header-block'>
+                    <span>Remove</span>
+                </div>
+            </div>
+            {cartItems.map((cartItem) => {
                 const { id, name, quantity } = cartItem;
                 return (
                     <div key={id}>
                         <h2>{name}</h2>
                         <span>{quantity}</span>
-                        <br/>
+                        <br />
                         <span>decrement</span>
-                        <br/>
+                        <br />
                         <span onClick={() => addItemToCart(cartItem)}>increment</span>
                     </div>
                 );
-            })}</div>
+            })}
+            <span className='Total'>Total: 0</span>
         </div>
     )
 }
