@@ -71,14 +71,13 @@ export const CartProvider = ({ children }) => {
         setCartItems(addCartItem(cartItems, productToAdd));
     }
     const removeItemToCart = (cartItemToRemove) => {
-        setCartItems(addCartItem(cartItems, cartItemToRemove));
+        setCartItems(removeCartItem(cartItems, cartItemToRemove));
     }
     const clearItemFromCart = (cartItemToClear) => {
         setCartItems(clearCartItem(cartItems, cartItemToClear));
     };
     const value = {
-        isCartOpen, setIsCartOpen, cartItems, addItemToCart, cartCount, removeItemToCart, clearItemFromCart, cartTotal
-    };
+        isCartOpen, setIsCartOpen, cartItems, addItemToCart, cartCount, removeItemToCart, clearItemFromCart, cartTotal };
     return (
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     )
