@@ -3,7 +3,6 @@ import SHOP_DATA from "../shop-data.js";
 import PRODUCTS from '../shop-data.js';
 import { addCollectionAndDocument } from "../util/firebase/firebase.utils.js";
 
-
 export const ProductsContext = createContext({
     products: [],
 });
